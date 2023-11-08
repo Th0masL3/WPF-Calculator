@@ -23,12 +23,50 @@ namespace WPF_Calculator
         public MainWindow()
         {
             InitializeComponent();
+            DecimalBtn.Click += DecimalBtn_Click;
+            ChangeSignBtn.Click += ChangeSignBtn_Click;
+            PercentageBtn.Click += PercentageBtn_Click;
+
+
+
         }
+
+
+        double lastNumber;
+        
+        double result;
+
+      
 
         private void NumberBtn_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
             DisplayLabel.Content += button.Content.ToString();
         }
+
+        private void DecimalBtn_Click( object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            DisplayLabel.Content += button.Content.ToString();  
+        }
+
+        private void ChangeSignBtn_Click (object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            DisplayLabel.Content = Double.Parse(DisplayLabel.Content.ToString()) * -1;
+        }
+
+        private void PercentageBtn_Click(Object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            DisplayLabel.Content = Double.Parse(DisplayLabel.Content.ToString()) / 100;
+
+        }
+
+
+
+
+
+
     }
 }

@@ -45,8 +45,6 @@ Content=""
 Grid.ColumnSpan="4"
 Grid.RowSpan="2"/>
 
-
-
         <Button x:Name="AllClearBtn"
  Content="AC"
  Grid.Column="0"
