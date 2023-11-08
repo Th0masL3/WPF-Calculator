@@ -24,5 +24,11 @@ namespace WPF_Calculator
         {
             InitializeComponent();
         }
+
+        private void NumberBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            DisplayLabel.Content += button.Content.ToString();
+        }
     }
 }
