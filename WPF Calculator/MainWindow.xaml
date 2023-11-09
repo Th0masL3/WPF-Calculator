@@ -63,7 +63,8 @@ Grid.RowSpan="2"/>
         <Button x:Name="DivisionBtn"
   Content="/"
   Grid.Column="3"
-  Grid.Row="1" Margin="0,62,0,0" Grid.RowSpan="2"/>
+  Grid.Row="1" Margin="0,62,0,0" Grid.RowSpan="2"
+  Click="Operation_Click"/>
 
         <Button x:Name="SevenBtn"
   Content="7"
@@ -86,7 +87,8 @@ Grid.RowSpan="2"/>
         <Button x:Name="MultiplyBtn"
  Content="*"
  Grid.Column="3"
- Grid.Row="2" Margin="0,62,0,0" Grid.RowSpan="2"/>
+ Grid.Row="2" Margin="0,62,0,0" Grid.RowSpan="2"
+ Click="Operation_Click"/>
 
         <Button x:Name="FourBtn"
  Content="4"
@@ -109,7 +111,8 @@ Click="NumberBtn_Click"/>
         <Button x:Name="SubstractBtn"
 Content="-"
 Grid.Column="3"
-Grid.Row="3" Margin="0,62,0,0" Grid.RowSpan="2"/>
+Grid.Row="3" Margin="0,62,0,0" Grid.RowSpan="2"
+Click="Operation_Click"/>
 
         <Button x:Name="OneBtn"
 Content="1"
@@ -132,7 +135,8 @@ Click="NumberBtn_Click"/>
         <Button x:Name="AddBtn"
 Content="+"
 Grid.Column="3"
-Grid.Row="4" Margin="0,62,0,0" Grid.RowSpan="2"/>
+Grid.Row="4" Margin="0,62,0,0" Grid.RowSpan="2"
+Click="Operation_Click"/>
 
         <Button x:Name="ZeroBtn"
 Content="0"
