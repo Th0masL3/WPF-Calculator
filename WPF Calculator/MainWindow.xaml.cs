@@ -71,14 +71,19 @@ namespace WPF_Calculator
 
         private void ChangeSignBtn_Click(object sender, RoutedEventArgs e)
         {
-            var btn = sender as Button;
             DisplayLabel.Content = Double.Parse(DisplayLabel.Content.ToString()) * -1;
         }
 
         private void PercentageBtn_Click(Object sender, RoutedEventArgs e)
         {
-            var btn = sender as Button;
-            DisplayLabel.Content = Double.Parse(DisplayLabel.Content.ToString()) / 100;
+            if (lastNumber == 0)
+            {
+                DisplayLabel.Content = Double.Parse(DisplayLabel.Content.ToString()) / 100;
+            }
+            else
+            {
+                DisplayLabel.Content = lastNumber * (Double.Parse(DisplayLabel.Content.ToString()) / 100);
+            }
 
         }
 
@@ -86,8 +91,8 @@ namespace WPF_Calculator
         {
             var button = sender as Button;
             string textButton = button.Content.ToString();
-            string newNumber = DisplayLabel.Content.ToString();
-            lastNumber = Double.Parse(newNumber);
+            lastNumber = Double.Parse(DisplayLabel.Content.ToString());
+           
 
             switch (textButton)
             {
@@ -107,10 +112,6 @@ namespace WPF_Calculator
                     selectedOperator = SelectedOperator.Division;
                     break;
             }
-
-            DisplayLabel.Content += button.Content.ToString();
-
-
         }
 
         private void EqualBtn_Click(Object sender, RoutedEventArgs e)
