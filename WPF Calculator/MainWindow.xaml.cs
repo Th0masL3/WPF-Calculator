@@ -49,6 +49,10 @@ namespace WPF_Calculator
 
         private void NumberBtn_Click(object sender, RoutedEventArgs e)
         {
+            if(lastNumber != 0)
+            {
+                DisplayLabel.Content = "";
+            }
             var button = sender as Button;
             DisplayLabel.Content += button.Content.ToString();
         }
@@ -56,6 +60,7 @@ namespace WPF_Calculator
         private void AllClear_Click(object sender, RoutedEventArgs e)
         {
             DisplayLabel.Content = string.Empty;
+            lastNumber = 0;
         }
 
         private void DecimalBtn_Click(object sender, RoutedEventArgs e)
@@ -102,7 +107,6 @@ namespace WPF_Calculator
                     break;
             }
 
-            DisplayLabel.Content = "";
 
         }
 
