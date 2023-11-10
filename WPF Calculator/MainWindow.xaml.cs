@@ -131,8 +131,18 @@ namespace WPF_Calculator
                     result = MathService.multiply(lastNumber, Double.Parse(DisplayLabel.Content.ToString()));
                     break;
                 case SelectedOperator.Division:
-                    result = MathService.divide(lastNumber, Double.Parse(DisplayLabel.Content.ToString()));
-                    break;
+                    if (Double.Parse(DisplayLabel.Content.ToString()) == 0)
+                    {
+                        string message = "Nuh uh you cant divide by zero";
+                        string title = "Loud incorrect Buzzer";
+                        MessageBox.Show(message, title);
+                    }
+                    else
+                    {
+                        result = MathService.divide(lastNumber, Double.Parse(DisplayLabel.Content.ToString()));
+                    }
+                        break;
+                    
             }
 
             DisplayLabel.Content = result;
