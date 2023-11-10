@@ -49,7 +49,7 @@ namespace WPF_Calculator
 
         private void NumberBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(lastNumber != 0)
+            if (lastNumber != 0 && Double.Parse(DisplayLabel.Content.ToString()) == lastNumber)
             {
                 DisplayLabel.Content = "";
             }
