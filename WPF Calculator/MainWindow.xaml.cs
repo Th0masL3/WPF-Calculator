@@ -81,6 +81,7 @@ namespace WPF_Calculator
         {
             var button = sender as Button;
             string textButton = DisplayLabel.Content.ToString();
+            lastNumber = Double.Parse(textButton);
 
             switch (textButton)
             {
@@ -101,29 +102,32 @@ namespace WPF_Calculator
                     break;
             }
 
+            DisplayLabel.Content = "";
+
         }
 
         private void EqualBtn_Click(Object sender, RoutedEventArgs e)
         {
             result = 0;
-            lastNumber = 0;
 
 
             switch (selectedOperator)
             {
                 case SelectedOperator.Addition:
-                    result = MathService.add(operand1, operand2);
+                    result = MathService.add(lastNumber, Double.Parse(DisplayLabel.Content.ToString()));
                     break;
                 case SelectedOperator.Subtraction:
-                    result = MathService.subtract(operand1, operand2);
+                    result = MathService.subtract(lastNumber, Double.Parse(DisplayLabel.Content.ToString()));
                     break;
                 case SelectedOperator.Multiplication:
-                    result = MathService.multiply(operand1, operand2);
+                    result = MathService.multiply(lastNumber, Double.Parse(DisplayLabel.Content.ToString()));
                     break;
                 case SelectedOperator.Division:
-                    result = MathService.divide(operand1, operand2);
+                    result = MathService.divide(lastNumber, Double.Parse(DisplayLabel.Content.ToString()));
                     break;
             }
+
+            DisplayLabel.Content = result;
 
 
 
