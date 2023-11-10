@@ -85,8 +85,9 @@ namespace WPF_Calculator
         private void Operation_Click(Object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            string textButton = DisplayLabel.Content.ToString();
-            lastNumber = Double.Parse(textButton);
+            string textButton = button.Content.ToString();
+            string newNumber = DisplayLabel.Content.ToString();
+            lastNumber = Double.Parse(newNumber);
 
             switch (textButton)
             {
@@ -106,6 +107,8 @@ namespace WPF_Calculator
                     selectedOperator = SelectedOperator.Division;
                     break;
             }
+
+            DisplayLabel.Content += button.Content.ToString();
 
 
         }
